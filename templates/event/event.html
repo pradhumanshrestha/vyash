@@ -1,0 +1,63 @@
+{% extends 'base.html' %}
+{% load static %}
+{% block content%}
+<!-- Page Content -->
+<div class="container" style="min-height: 600px;">
+
+  <!-- Page Heading -->
+  <h1 class="my-4">EVENTS LISTING
+  </h1>
+
+  <div class="row">
+    {% for event in events %}
+    <div class="col-lg-4 col-sm-6 mb-4">
+      <div class="card h-100">
+        <a href="#"><img class="card-img-top" src="{{event.photo.url}}" alt=""></a>
+        <div class="card-body">
+          <h4 class="card-title">
+            <a href="{% url 'eventdetail' event.id %}">event.title</a>
+          </h4>
+          <p class="card-text">{{event.shortDetails}}</p>
+        </div>
+      </div>
+    </div>
+    {% endfor%}
+  </div>
+  <!-- /.row -->
+
+  <!-- Pagination -->
+
+
+<div>
+  <nav aria-label="Page navigation example" class="mt-5">
+      <ul class="pagination justify-content-center">
+          {% if events.has_previous %}
+              <li><a class="page-link text-primary d-inline-block" href="?page={{ events.previous_page_number }}"><i class="fas fa-backward"></i></a></li>
+          {% else %}
+              <li class="disabled"><div class="page-link text-secondary d-inline-block disabled" href="#"><i class="fas fa-backward"></i></div></li>
+          {% endif %}
+
+          {% for link_page in events.paginator.page_range %}
+              {% if link_page %}
+                  {% if link_page == events.number %}
+                      <li class="disabled"><div class="page-link text-secondary d-inline-block disabled" href="#">{{ link_page }}</div></li>
+                  {% else %}
+                      <li><a class="page-link text-primary d-inline-block" href="?page={{ link_page }}">{{ link_page }}</a></li>
+                  {% endif %}
+              {% else %}
+                  <li class="disabled"><a class="page-link text-secondary d-inline-block text-muted" href="#">・・・</a></li>
+              {% endif %}
+          {% endfor %}
+
+          {% if events.has_next %}
+              <li><a class="page-link text-primary d-inline-block" href="?page={{ events.next_page_number }}"><i class="fas fa-forward"></i></a></li>
+          {% else %}
+              <li class="disabled"><div class="page-link text-secondary d-inline-block disabled" href="#"><i class="fas fa-forward"></i></div></li>
+          {% endif %}
+      </ul>
+  </nav>
+</div>
+</div>
+<!-- /.container -->
+
+{% endblock %}

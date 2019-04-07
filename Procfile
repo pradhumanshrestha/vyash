@@ -1,0 +1,1 @@
+web: gunicorn vyash.wsgi --log-file -

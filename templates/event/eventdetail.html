@@ -1,0 +1,290 @@
+{% extends 'base.html' %}
+{% load static %}
+{% block content%}
+<div class="container">
+    <div class="row">
+        <div class="col-md-9 col-sm-12 col-lg-8">
+            <div class="row card mt-3 mb-3">
+
+                <div class="col card-body">
+                    <h1 class="mt-4">{{detail.title}}</h1>
+                    <p class="lead">by <a href="#">{{detail.organized_by}}</a></p>
+                    <hr>
+                    <div class="row">
+                        <div class="col-md-6">
+                            <p>Posted On: {{detail.pub_date_pretty2}}</p>
+                        </div>
+                        <div class="col-md-6 text-right">
+                            Status: <small class="text-success">{{detail.status}}</small>
+                        </div>
+                    </div>
+
+                    <hr>
+                    <img class="img-fluid rounded" src="{{detail.photo.url}}" alt="">
+                    <hr>
+                    <p class="lead">{{detail.description}}</p>
+                    <div class="row ">
+                        <div class="col-md-6">
+                            <h3>Registration Cost: </h3>
+
+                        </div>
+                        <div class="col-md-6">
+                            <h3> Rs.{{detail.fee}}</h3>
+                        </div>
+                    </div>
+                    <div class="row ">
+                        <div class="col-md-6">
+                            <h3>Price Money: </h3>
+
+                        </div>
+                        <div class="col-md-6">
+                            <h3> Rs.{{detail.price}}</h3>
+                        </div>
+                    </div>
+                    <div class="row ">
+                        <div class="col-md-6">
+                            <h3>Event Venue: </h3>
+
+                        </div>
+                        <div class="col-md-6">
+                            <h3 class="text-success"> {{detail.venue}}</h3>
+                        </div>
+                    </div>
+                    <div class="row">
+                        <div class="col-md-6">
+                            <!-- Button trigger modal -->
+                            <!-- Button trigger modal -->
+                            <button type="button" class="btn btn-transparent btn-lg m-0 px-0" data-toggle="modal"
+                                data-target="#exampleModalCenter">
+                                <h3>Event Rules</h3>
+                            </button>
+                        </div>
+                        <div class="col-md-6 text-right">
+                            <button class="btn btn-success btn-sm m-0">
+                                <h3>Register !</h3>
+                            </button>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="col-md-3 col-sm-12 col-lg-4">
+            <div class="card my-4">
+                <h5 class="card-header">Subscribe Us</h5>
+                <div class="card-body">
+                    
+                </div>
+            </div>
+            <div class="card my-4">
+                <h5 class="card-header">Latest Videos</h5>
+                <div class="card-body">
+                    
+                </div>
+            </div>
+        </div>
+    </div>
+    <!-- Modal -->
+    <div class="modal fade" id="exampleModalCenter" tabindex="-1" role="dialog"
+        aria-labelledby="exampleModalCenterTitle" aria-hidden="true">
+        <div class="modal-dialog modal-dialog-centered border" role="document">
+            <div class="modal-content mr-5" style="width:700px;">
+                <div class="modal-header" style="width:700px;">
+                    <h5 class="modal-title" id="exampleModalCenterTitle">Rules And Regulations
+                    </h5>
+                    <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                        <span aria-hidden="true">&times;</span>
+                    </button>
+                </div>
+                <div class="modal-body" style="width:700px;">
+                    <div class="container-fluid">
+                        <div class="row">
+                            <div class="col">
+                                <p class="card-subtitle text-justify text-muted mb-2 mt-1">
+                                    <ol>
+                                        <li>
+                                            The entry fees shall not be refundable on the following cases:
+                                            <ol>
+                                                <li>If the participants cannot be present at the given time.
+                                                </li>
+                                                <li>If the date of tournament changes due to any
+                                                    unavoidable
+                                                    valid reason.
+                                                    However, the next data shall be provided to
+                                                    the
+                                                    participants beforehand.
+                                                </li>
+                                                <li>If the entry fee is deposited on any other
+                                                    account
+                                                    except the mentioned
+                                                    account details on the form the organizers
+                                                    will not bear
+                                                    any
+                                                    responsibility.</li>
+                                                <li>If the participants bring any other
+                                                    substitute players
+                                                    that are listed
+                                                    in the form, the team substitute player
+                                                    shall not be
+                                                    valid and the entry
+                                                    fees shall not be refunded.</li>
+                                                <li>The player needs to fill the PUBG ID and
+                                                    name properly.
+                                                    If not the
+                                                    player shall be disqualified and entry fee
+                                                    shall not be
+                                                    refundable.
+                                                </li>
+                                            </ol>
+                                        </li>
+                                        <li>
+                                            If the players do not make in the time the following
+                                            measures
+                                            shall be taken:
+                                            <ol>
+                                                <li>
+                                                    On the first stage :(this stage consists of
+                                                    two rounds)
+                                                    <ol>
+                                                        <li>If the players do not make it on
+                                                            time for both
+                                                            the rounds the
+                                                            players shall be disqualified.</li>
+                                                        <li>If the players make it on time for
+                                                            only one of
+                                                            the rounds and
+                                                            lose by points they shall not be
+                                                            qualified to
+                                                            move further</li>
+                                                        <li>If the players make it on time for
+                                                            only one of
+                                                            the rounds,
+                                                            however, gain sufficient points,
+                                                            they shall be
+                                                            qualified to
+                                                            proceed further
+
+                                                        </li>
+                                                    </ol>
+                                                </li>
+                                                <li>On the second stage:
+                                                    <ol>
+                                                        <li>If the players do not make it on the
+                                                            given time
+                                                            the players
+                                                            shall be automatically disqualified.
+                                                        </li>
+                                                    </ol>
+                                                </li>
+                                            </ol>
+                                        </li>
+                                        <li>
+                                            The selection shall be done only from the players
+                                            present at the
+                                            given time of
+                                            the tournament.
+                                        </li>
+                                        <li>
+                                            The players shall be responsible to check the
+                                            provided pages on
+                                            the form that
+                                            have the details regarding the timing and other
+                                            required
+                                            information of the
+                                            tournament. If the player fails to check any of
+                                            these or does
+                                            not contact the
+                                            organizers, the player shall be solely responsible.
+                                        </li>
+                                        <li>
+                                            If the players get disconnected by any of the
+                                            following
+                                            activities the
+                                            organizers shall take no responsibility:
+                                            <ol>
+                                                <li>If the internet connection is broken</li>
+                                                <li>If the light is gone out </li>
+                                                <li>If the player gets out of the customs room
+                                                    during the
+                                                    match by any means
+                                                </li>
+                                                <li>If the phone does not support the game
+                                                    smoothly.</li>
+                                                <li>If any problem occurs with the mic or
+                                                    speaker during the
+                                                    match.</li>
+                                                <li>If the device that the player is using does
+                                                    not work
+                                                    properly.</li>
+                                                <li>If the player receives any calls during the
+                                                    game and is
+                                                    not able to join
+                                                    the game again.</li>
+                                            </ol>
+                                        </li>
+                                        <li>
+                                            The prize shall be distributed in an event. The date
+                                            of the
+                                            event shall be
+                                            informed to the participants beforehand.
+                                        </li>
+                                        <li>
+                                            The player should play in the Squad
+                                        </li>
+                                        <li>
+                                            The player needs to fill the PUBG ID and name
+                                            properly. If not
+                                            the player shall
+                                            be disqualified.
+                                        </li>
+                                        <li>
+                                            The organizer's decision shall be the final decision
+                                        </li>
+                                        <li>
+                                            Hackers will be disqualified instantly on
+                                            identification.
+                                        </li>
+                                        <li>
+                                            Room id, slot and password will be given in the paid
+                                            group where
+                                            you will be
+                                            added after the payment. (It is not a free match).
+                                        </li>
+                                    </ol>
+                                    <ol>
+                                        <li>Note:
+                                            <ol>
+                                                <li>
+                                                    If the participants do not understand or
+                                                    have queries
+                                                    about any of the
+                                                    clauses mentioned above, the participant can
+                                                    feel free
+                                                    to contact the
+                                                    organizers.
+                                                </li>
+                                                <li>
+                                                    As it is a duo match, this prize money will
+                                                    be divided
+                                                    between the
+                                                    players.
+                                                </li>
+                                                <li>
+                                                    Screenshots mandatory for rewards of rank
+                                                    achieved at
+                                                    the end of the
+                                                    game.
+                                                </li>
+                                            </ol>
+                                        </li>
+                                    </ol>
+                                </p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+{% endblock %}
